@@ -108,7 +108,9 @@ function getReleaseURL(version) {
     const arch = getArch();
     return encodeURI(`https://github.com/labd/mach-composer/releases/download/v${cleanVersion}/mach-composer-${cleanVersion}-${platform}-${arch}.tar.gz`);
 }
-run();
+if (!process.env.JEST_WORKER_ID) {
+    run();
+}
 
 
 /***/ }),

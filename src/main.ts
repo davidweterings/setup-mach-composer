@@ -58,4 +58,6 @@ export function getReleaseURL(version: string): string {
   )
 }
 
-run()
+if (!process.env.JEST_WORKER_ID) {
+  run()
+}
